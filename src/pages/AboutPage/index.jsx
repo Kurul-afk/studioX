@@ -1,9 +1,9 @@
 import React from "react";
-import AboutSignBoardLayout from "../../components/layouts/aboutLayout/AboutSignBoardLayout";
-import AboutMissionLayout from "../../components/layouts/aboutLayout/AboutMissionLayout";
-import AboutTeamLayout from "../../components/layouts/aboutLayout/AboutTeamLayout";
-import AboutValuesLayout from "../../components/layouts/aboutLayout/AboutValuesLayout";
-import AboutOurWayLayout from "../../components/layouts/aboutLayout/AboutOurWayLayout";
+import AboutSignBoardLayout from "../../components/layouts/AboutLayout/AboutSignBoardLayout";
+import AboutMissionLayout from "../../components/layouts/AboutLayout/AboutMissionLayout";
+import AboutTeamLayout from "../../components/layouts/AboutLayout/AboutTeamLayout";
+import AboutValuesLayout from "../../components/layouts/AboutLayout/AboutValuesLayout";
+import AboutOurWayLayout from "../../components/layouts/AboutLayout/AboutOurWayLayout";
 export default function AboutPage() {
   return (
     <div className="w-full h-full relative">
