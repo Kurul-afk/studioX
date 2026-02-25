@@ -1,5 +1,5 @@
 import React from "react";
-import ContactUsLayout from "../../components/layouts/homeLayout/contactUsLayout";
+import ContactUsLayout from "../../components/layouts/homeLayout/ContactUsLayout";
 
 export default function ContactPage() {
   return (

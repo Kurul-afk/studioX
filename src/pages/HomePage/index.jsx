@@ -1,10 +1,10 @@
 import React, { use, useEffect, useRef } from "react";
-import SignBoardLayout from "../../components/layouts/homeLayout/signBoardLayout";
-import ProjectsLayout from "../../components/layouts/homeLayout/projectsLayout";
-import ServicesLayout from "../../components/layouts/homeLayout/servicesLayout";
-import ExperienceLayout from "../../components/layouts/homeLayout/experienceLayout";
-import ClientsAndPartnerLayout from "../../components/layouts/homeLayout/clientsAndPartnerLayout";
-import ContactUsLayout from "../../components/layouts/homeLayout/contactUsLayout";
+import SignBoardLayout from "../../components/layouts/homeLayout/SignBoardLayout";
+import ServicesLayout from "../../components/layouts/homeLayout/ServicesLayout";
+import ExperienceLayout from "../../components/layouts/homeLayout/ExperienceLayout";
+import ClientsAndPartnerLayout from "../../components/layouts/homeLayout/ClientsAndPartnerLayout";
+import ContactUsLayout from "../../components/layouts/homeLayout/ContactUsLayout";
+import ProjectsLayout from "../../components/layouts/homeLayout/ProjectsLayout";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/all";
 

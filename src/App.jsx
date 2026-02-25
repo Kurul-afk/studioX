@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
-import Header from "./components/layouts/header";
-import Footer from "./components/layouts/footer";
+import Header from "./components/layouts/Header";
+import Footer from "./components/layouts/Footer";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./router";
 
 export default function App() {
-  // tesxt
   return (
     <div className="overflow-hidden relative">
       <ToastContainer

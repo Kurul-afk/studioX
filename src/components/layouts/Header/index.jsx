@@ -1,8 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef, useState } from "react";
-import MenuScreen from "../../ui/menuScreen";
-import BurgerBtn from "../../ui/burgerBtn";
+import MenuScreen from "../../ui/MenuScreen";
+import BurgerBtn from "../../ui/BurgerBtn";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);

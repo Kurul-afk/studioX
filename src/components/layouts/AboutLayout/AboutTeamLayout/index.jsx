@@ -1,6 +1,6 @@
 import React from "react";
 import { aboutTeamMembers } from "../../../../constants";
-import AboutTeamMemberCard from "../../../ui/aboutTeamMemberCard";
+import AboutTeamMemberCard from "../../../ui/AboutTeamMemberCard";
 
 export default function AboutTeamLayout() {
   return (

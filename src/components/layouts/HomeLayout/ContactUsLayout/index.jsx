@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import ContactForm from "../../../ui/contactForm";
+import ContactForm from "../../../ui/ContactForm";
 
 export default function ContactUsLayout() {
   const container = useRef(null);
