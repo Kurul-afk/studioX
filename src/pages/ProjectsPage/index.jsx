@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectsLayout from "../../components/layouts/HomeLayout/projectsLayout";
+import ProjectsLayout from "../../components/layouts/HomeLayout/ProjectsLayout";
 
 export default function ProjectsPage() {
   return (
