@@ -21,7 +21,6 @@ const cardItem = [
     date: "24 Jan 2024",
     img: JananImg,
   },
-
   {
     title: "EHE",
     date: "24 Jan 2024",
