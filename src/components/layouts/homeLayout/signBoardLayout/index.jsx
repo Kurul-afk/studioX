@@ -24,7 +24,7 @@ export default function SignBoardLayout() {
   );
 
   return (
-    <div
+    <section
       ref={containerRef}
       className="flex items-end justify-between w-[80%] mx-auto mt-48"
     >
@@ -35,6 +35,6 @@ export default function SignBoardLayout() {
         Located in the United States, our studio is dedicated to crafting robust
         and renowned brands.
       </p>
-    </div>
+    </section>
   );
 }

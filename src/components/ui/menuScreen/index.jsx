@@ -1,7 +1,8 @@
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
-export default function MenuScreen({ isOpen }) {
+export default function MenuScreen({ onClick, isOpen }) {
   const burgerScreenRef = useRef(null);
   useEffect(() => {
     if (isOpen) {
@@ -26,22 +27,18 @@ export default function MenuScreen({ isOpen }) {
       >
         <ul className="list-none">
           <li className="font-bold text-9xl hover:text-white transition-all cursor-pointer mb-4">
-            Home
+            <Link to="/">Home</Link>
           </li>
           <li className="font-bold text-9xl hover:text-white transition-all cursor-pointer mb-4">
-            Projects
+            <Link to="/projects">Projects</Link>
           </li>
           <li className="font-bold text-9xl hover:text-white transition-all cursor-pointer mb-4">
-            About
+            <Link to="/about">About</Link>
           </li>
-          <li className="font-bold text-9xl hover:text-white transition-all cursor-pointer">
-            Contact
+          <li className="font-bold text-9xl hover:text-white transition-all cursor-pointer mb-4">
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
-        <div className="flex justify-between items-center w-[80%]">
-          <div className="cursor-pointer">Change theme</div>
-          <p>HELLO@STUDIOX.COM</p>
-        </div>
       </div>
     </>
   );

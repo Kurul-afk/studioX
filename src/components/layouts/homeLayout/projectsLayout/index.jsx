@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import ProjectCarousel from "../../ui/ProjectCarousel";
+import React, { use, useRef } from "react";
+import ProjectCarousel from "../../../ui/ProjectCarousel";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,7 +13,9 @@ export default function ProjectsLayout() {
     () => {
       const tl = gsap.timeline();
       tl.from(".animated-text", {
-        scrollTrigger: ".animated-text",
+        scrollTrigger: {
+          trigger: ".animated-text",
+        },
         duration: 2.5,
         y: 300,
         opacity: 0,
@@ -25,7 +27,7 @@ export default function ProjectsLayout() {
   );
 
   return (
-    <div
+    <section
       ref={containerRef}
       className="flex flex-col justify-between w-full mt-40"
     >
@@ -34,6 +36,6 @@ export default function ProjectsLayout() {
         <p className="animated-text text-xl">More +500</p>
       </div>
       <ProjectCarousel />
-    </div>
+    </section>
   );
 }

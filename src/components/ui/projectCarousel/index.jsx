@@ -5,10 +5,15 @@ import EHEImg from "../../../assets/EHE.jpg";
 import EverydayWeekendImg from "../../../assets/EverydayWeekend.jpg";
 import ZeroGravityImg from "../../../assets/ZeroGravity.jpg";
 import ProjectCard from "../ProjectCard";
+import { Navigation, Pagination, Mousewheel, FreeMode } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 const cardItem = [
   {
@@ -24,62 +29,66 @@ const cardItem = [
   },
 
   {
-    title: "EverydayWeekend",
+    title: "Everyday Weekend",
     date: "24 Feb 2024",
     img: EverydayWeekendImg,
   },
 
   {
-    title: "SweetPuffs",
+    title: "Sweet Puffs",
     date: "22 Mar 2024",
     img: SweetPuffsImg,
   },
 
   {
-    title: "ZeroGravity",
+    title: "Zero Gravity",
     date: "22 Mar 2024",
     img: ZeroGravityImg,
   },
 ];
 
 export default function ProjectCarousel() {
-  const container = useRef(null);
-
+  const containerRef = useRef(null);
   useGSAP(
     () => {
-      const cards = gsap.utils.toArray(".project-card-wrapper");
-
-      // Анимация мягкого появления всей ленты
-      gsap.from(cards, {
+      const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: container.current,
-          start: "top 85%", // Начинаем, когда контейнер почти вошел в экран
-          toggleActions: "play none none none",
+          trigger: containerRef.current,
+          start: "top 80%",
+          once: true,
         },
-        y: 300, // Небольшой подъем (вместо 300) для плавности
+      });
+      tl.from(".project-card-wrapper", {
+        duration: 1.5,
+        y: 300,
         opacity: 0,
-        duration: 1, // Быстрая и отзывчивая анимация
-        stagger: 0.2, // Очередность появления карточек
-        ease: "power2.out",
-        force3D: true, // Ускорение через видеокарту
+        stagger: 0.2,
+        force3D: true,
+        clearProps: "all",
       });
     },
-    { scope: container },
+    { scope: containerRef },
   );
 
   return (
-    <div
-      ref={container}
-      className="flex gap-6 py-20 px-10 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth"
-    >
-      {cardItem.map((card, idx) => (
-        <div
-          className="project-card-wrapper flex-shrink-0 snap-center"
-          key={idx}
-        >
-          <ProjectCard cardItem={card} />
-        </div>
-      ))}
+    <div className="relative w-full overflow-hidden" ref={containerRef}>
+      <Swiper
+        modules={[Navigation, Pagination, Mousewheel, FreeMode]}
+        spaceBetween={24}
+        slidesPerView={"auto"}
+        centeredSlides={false}
+        freeMode={true}
+        grabCursor={true}
+        className="px-10"
+      >
+        {cardItem.map((card, idx) => (
+          <SwiperSlide key={idx} className="max-w-max">
+            <div className="project-card-wrapper">
+              <ProjectCard cardItem={card} />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }
