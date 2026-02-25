@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import Header from "./components/layouts/Header";
-import Footer from "./components/layouts/Footer";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./router";
+import HeaderLayout from "./components/layouts/HeaderLayout";
+import FooterLayout from "./components/layouts/FooterLayout";
 
 export default function App() {
   return (
@@ -20,11 +20,11 @@ export default function App() {
       />
       <BrowserRouter>
         <div className="flex flex-col min-h-screen">
-          <Header />
+          <HeaderLayout />
           <main className="flex-grow">
             <Router />
           </main>
-          <Footer />
+          <FooterLayout />
         </div>
       </BrowserRouter>
     </div>

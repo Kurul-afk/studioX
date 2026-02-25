@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import MenuScreen from "../../ui/MenuScreen";
 import BurgerBtn from "../../ui/BurgerBtn";
 
-export default function Header() {
+export default function HeaderLayout() {
   const [isOpen, setIsOpen] = useState(false);
   const headerContainer = useRef(null);
 

@@ -5,7 +5,7 @@ import BaseBtn from "../../ui/BaseBtn";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
-export default function Footer() {
+export default function FooterLayout() {
   const {
     register,
     formState: { errors },
