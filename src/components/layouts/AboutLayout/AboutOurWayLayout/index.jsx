@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useRef } from "react";
 import { aboutStory } from "../../../../constants";
+import { useAnimation } from "../../../../hooks/useAnimation";
+import { useGSAP } from "@gsap/react";
 
 export default function AboutOurWayLayout() {
+  const { fadeUp } = useAnimation();
+  const containerRef = useRef(null);
+
+  useGSAP(
+    () => {
+      fadeUp(".fade-up");
+    },
+    { scope: containerRef },
+  );
   return (
     <>
-      <section className="max-w-4xl w-full h-full">
-        <h2 className="text-center text-9xl mb-16">Our way</h2>
-        <div className="flex flex-col gap-8">
-          {aboutStory.map((value) => (
-            <div className="w-full p-8 rounded-2xl border-2 border-gray-200 h-full shadow-sm hover:shadow-md transition-all">
+      <section ref={containerRef} className="max-w-4xl w-full h-full">
+        <h2 className="text-center text-5xl xl:text-7xl 2xl:text-8xl mb-16 fade-up">
+          Our way
+        </h2>
+        <div className="flex flex-col gap-8 fade-up">
+          {aboutStory.map((value, idx) => (
+            <div
+              key={idx}
+              className="w-full p-8 rounded-2xl border-2 border-gray-200 h-full shadow-sm hover:shadow-md transition-all"
+            >
               <div className="text-orange-500 text-2xl font-bold mb-2.5">
                 {value.date}
               </div>

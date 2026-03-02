@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function AboutTeamMemberCard({ member }) {
+export default function AboutTeamMemberCard({ member, className }) {
   const theme = {
     orange: "bg-orange-500",
     orangeLight: "bg-orange-500/40 hover:bg-orange-500/60",
@@ -16,7 +16,9 @@ export default function AboutTeamMemberCard({ member }) {
 
   return (
     <>
-      <div className="p-8 rounded-2xl border-2 border-gray-400 bg-gray-300/50 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
+      <div
+        className={`p-8 rounded-2xl border-2 border-gray-400 bg-gray-300/50 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow ${className}`}
+      >
         <div
           className={`w-24 h-24 flex items-center justify-center ${theme[member.bgColor]} mx-auto mb-5 rounded-full`}
         >

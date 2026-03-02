@@ -18,7 +18,7 @@ export default function FooterLayout() {
   return (
     <footer className="w-full h-full py-10 mt-10">
       <div className="w-[80%] mx-auto flex flex-col items-center justify-between gap-40">
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex justify-between items-center invisible 2xl:visible">
           <div className="flex gap-1">
             <p className="text-xl mr-6 max-w-[240px]">
               Join our mailing list for the latest updates.

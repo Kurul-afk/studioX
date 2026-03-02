@@ -1,103 +1,49 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef } from "react";
-
-const studioStat = [
-  {
-    label: "years of experience",
-    value: 17,
-  },
-  {
-    label: "team members",
-    value: 254,
-  },
-  {
-    label: "expert in tech",
-    value: 17,
-  },
-  {
-    label: "Customer Satisfaction",
-    value: 99,
-  },
-];
+import { useAnimation } from "../../../../hooks/useAnimation";
+import { studioStat } from "../../../../constants";
 
 export default function ExperienceLayout() {
+  const { counterAnimate, fadeUp } = useAnimation();
   const containerRef = useRef(null);
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 70%",
-          once: true,
-        },
-      });
-
-      tl.from(".experience-title", {
-        y: 100,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power2.out",
-        stagger: 0.4,
-        force3D: true,
-      });
-      tl.from(
-        ".stat-row",
-        {
-          y: 50,
-          opacity: 0,
-          duration: 1.5,
-          ease: "power2.out",
-          stagger: 0.4,
-        },
-        "-=0.5",
-      );
-      tl.from(
-        ".stat-num",
-        {
-          textContent: 0,
-          duration: 2.5,
-          ease: "power2.out",
-          snap: { textContent: 1 },
-          stagger: 0.1,
-        },
-        "-=0.5",
-      );
+      fadeUp(".fade-up");
+      counterAnimate(".counter-animate");
     },
-    { scope: containerRef.current },
+    { scope: containerRef },
   );
 
   return (
     <section ref={containerRef} className="relative w-full h-full">
       <div className="w-[80%] mx-auto flex">
         <div className="w-full">
-          <div className="w-[40%] max-w-[766px]">
-            <h2 className="text-2xl text-orange-500 experience-title">
-              //EXPERIENCE
-            </h2>
-            <p className="mt-4 text-5xl experience-title">
+          <div className="w-[40%] max-w-[680px] w-full lg:max-w-[720px] xl:max-w-[766px]">
+            <h2 className="text-2xl text-orange-500 fade-up">//EXPERIENCE</h2>
+            <p className="mt-4 text-3xl xl:text-4xl 2xl:text-5xl fade-up">
               Located in the United States, our studio is dedicated to crafting
               robust and renowned brands.
             </p>
-            <p className="mt-8 text-2xl experience-title">
+            <p className="mt-8 text-2xl fade-up">
               We are a dedicated bunch of professionals with many years of
               experience within the creative industry.
             </p>
           </div>
           <div className="w-full">
             {studioStat.map((info, idx) => (
-              <div className="stat-row flex flex-col mt-20" key={idx}>
+              <div className="fade-up flex flex-col mt-20" key={idx}>
                 <div className="flex justify-between items-end w-full pb-4">
-                  <p className="text-2xl text-orange-500 font-bold uppercase">
+                  <p className="texl-xl lg:text-2xl fade-up text-orange-500 font-bold uppercase">
                     /{info.label}
                   </p>
-                  <div className="text-[120px] md:text-[250px] lg:text-[300px] leading-[0.8] font-bold">
+                  <div className="text-[80px] sm:text-[120px] fade-up xl:text-[250px] 2xl:text-[300px] leading-[0.8] font-bold">
                     <span>+</span>
-                    <span className="stat-num">{info.value}</span>
+                    <span className="counter-animate">{info.value}</span>
                   </div>
                 </div>
-                <div className="bg-zinc-200 h-[1px] w-full"></div>
+                <div className="bg-zinc-200 h-[1px] w-full fade-up"></div>
               </div>
             ))}
           </div>

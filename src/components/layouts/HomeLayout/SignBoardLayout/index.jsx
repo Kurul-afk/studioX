@@ -2,23 +2,15 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useAnimation } from "../../../../hooks/useAnimation";
 
 export default function SignBoardLayout() {
   const containerRef = useRef(null);
+  const { fadeUp } = useAnimation();
 
   useGSAP(
     () => {
-      const tl = gsap.timeline();
-      tl.from(".animated-text", {
-        scrollTrigger: ".animated-text",
-        duration: 2.5,
-        y: 300,
-        opacity: 0,
-        ease: "power4.out",
-        stagger: 0.2,
-      });
+      fadeUp(".fade-up-text");
     },
     { scope: containerRef },
   );
@@ -26,12 +18,12 @@ export default function SignBoardLayout() {
   return (
     <section
       ref={containerRef}
-      className="flex items-end justify-between w-[80%] mx-auto mt-48"
+      className="flex flex-col items-center md:items-end md:justify-between w-[80%] mx-auto mt-48 md:flex-row md:gap-0"
     >
-      <h1 className="animated-text text-9xl w-[80%] tracking-tight max-w-[900px]">
+      <h1 className="fade-up-text mb-16 md:mb-0 text-3xl sm:text-5xl lg:text-7xl xl:text-8xl 2xl:text-9xl 2xl:w-[80%] tracking-tight w-full text-center md:text-start  md:max-w-[340px] lg:max-w-[510px] xl:max-w-[660px] 2xl:max-w-[900px]">
         We Craft Human-Centric Digital Products.
       </h1>
-      <p className="animated-text text-xl w-[20%] max-w-[320px] ml-10 tracking-wide">
+      <p className="fade-up-text text-base lg:text-lg xl:text-xl w-full text-center md:text-start md:max-w-[260px] lg:max-w-[290px] xl:max-w-[320px] md:ml-10 tracking-wide ">
         Located in the United States, our studio is dedicated to crafting robust
         and renowned brands.
       </p>

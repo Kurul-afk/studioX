@@ -26,16 +26,16 @@ export default function MenuScreen({ onClick, isOpen }) {
         className="fixed bg-gradient-to-b top-0 left-0 from-red-800 to-orange-500 h-[100vh] w-full flex flex-col justify-center items-center translate-x-full z-center z-40"
       >
         <ul className="list-none">
-          <li className="font-bold text-9xl hover:text-white transition-all cursor-pointer mb-4">
+          <li className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl hover:text-white transition-all cursor-pointer mb-4">
             <Link to="/">Home</Link>
           </li>
-          <li className="font-bold text-9xl hover:text-white transition-all cursor-pointer mb-4">
+          <li className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl hover:text-white transition-all cursor-pointer mb-4">
             <Link to="/projects">Projects</Link>
           </li>
-          <li className="font-bold text-9xl hover:text-white transition-all cursor-pointer mb-4">
+          <li className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl hover:text-white transition-all cursor-pointer mb-4">
             <Link to="/about">About</Link>
           </li>
-          <li className="font-bold text-9xl hover:text-white transition-all cursor-pointer mb-4">
+          <li className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl hover:text-white transition-all cursor-pointer mb-4">
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
